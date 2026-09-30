@@ -7,12 +7,6 @@ import { useRouter } from "next/navigation";
 import {
   Search,
   CheckCircle2,
-  Paintbrush,
-  Code,
-  Server,
-  Briefcase,
-  Megaphone,
-  Camera,
   Star,
   ArrowRight,
   TrendingUp,
@@ -56,12 +50,12 @@ export default function HomePage() {
       : coursesData.slice(0, 6);
 
   const learningPaths = [
-    { name: "Design", icon: Paintbrush, count: "48 Courses" },
-    { name: "Development", icon: Code, count: "82 Courses" },
-    { name: "IT & Software", icon: Server, count: "35 Courses" },
-    { name: "Business", icon: Briefcase, count: "54 Courses" },
-    { name: "Marketing", icon: Megaphone, count: "29 Courses" },
-    { name: "Photography", icon: Camera, count: "22 Courses" },
+    { name: "Design", icon: "/assets/categories/cat-design.png" },
+    { name: "Development", icon: "/assets/categories/cat-development.png" },
+    { name: "IT & Software", icon: "/assets/categories/cat-it-software.png" },
+    { name: "Business", icon: "/assets/categories/cat-business.png" },
+    { name: "Marketing", icon: "/assets/categories/cat-marketing.png" },
+    { name: "Photography", icon: "/assets/categories/cat-photography.png" },
   ];
 
   const testimonials = [
@@ -261,40 +255,43 @@ export default function HomePage() {
       </section>
 
       {/* 4. EXPLORE DIVERSE LEARNING PATHS */}
-      <section className="py-20 lg:py-24 bg-[#F5F6F7]/60 border-y border-[#ECEFF2]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[44px] text-[#161718] leading-tight">
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 xl:px-[119px]">
+          {/* Section Header (Frame 9 in Figma) */}
+          <div className="text-center max-w-[917px] mx-auto">
+            <h2 className="font-poppins font-semibold text-3xl sm:text-4xl md:text-[40px] lg:text-[44px] leading-[120%] tracking-[-0.01em] text-[#040819]">
               Explore Diverse Learning Paths at Bytespace
             </h2>
-            <p className="mt-4 text-[#585A62] text-sm sm:text-base leading-relaxed">
+            <p className="mt-4 font-satoshi font-normal text-base sm:text-[18px] leading-[160%] text-[#82868E] max-w-[917px] mx-auto">
               At Bytespace, we believe in empowering individuals through
-              knowledge. Our vibrant online learning platform offers a wide
-              array of courses, designed to ignite your passion and fuel your
-              personal and professional growth.
+              knowledge. Our diverse range of courses spans various fields,
+              ensuring there&apos;s something for everyone. Unleash your
+              potential and explore our carefully curated categories.
             </p>
           </div>
 
-          {/* Category Icons Row */}
-          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-6">
-            {learningPaths.map((path) => {
-              const Icon = path.icon;
-              return (
-                <Link
-                  key={path.name}
-                  href={`/search?category=${encodeURIComponent(path.name)}`}
-                  className="bg-white rounded-2xl p-6 border border-[#ECEFF2] flex flex-col items-center text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group"
-                >
-                  <div className="w-14 h-14 rounded-full bg-[#CBFC01]/40 flex items-center justify-center text-[#161718] group-hover:bg-[#CBFC01] transition-colors">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="mt-4 font-poppins font-semibold text-base text-[#161718]">
-                    {path.name}
-                  </h3>
-                  <p className="mt-1 text-xs text-[#82868E]">{path.count}</p>
-                </Link>
-              );
-            })}
+          {/* Category Cards (Frame 10 in Figma: Fixed 1,202px, Gap 40px) */}
+          <div className="mt-12 lg:mt-[68px] max-w-[1202px] mx-auto flex flex-wrap xl:flex-nowrap justify-center gap-6 xl:gap-[40px]">
+            {learningPaths.map((path) => (
+              <Link
+                key={path.name}
+                href={`/search?category=${encodeURIComponent(path.name)}`}
+                className="w-[167px] h-[167px] rounded-[24px] border border-[#CED0D3] bg-white flex flex-col items-center justify-center gap-3 p-4 hover:border-[#003BE2] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+              >
+                <div className="w-[60px] h-[60px] rounded-full overflow-hidden flex items-center justify-center shrink-0">
+                  <Image
+                    src={path.icon}
+                    alt={path.name}
+                    width={60}
+                    height={60}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <h3 className="font-satoshi font-medium text-[20px] leading-[120%] text-[#242528] text-center">
+                  {path.name}
+                </h3>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

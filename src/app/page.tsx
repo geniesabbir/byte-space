@@ -25,6 +25,11 @@ import {
   LimeWavyPill,
   LimeCylinder,
 } from "@/components/Abstract3DShapes";
+import {
+  UIUXCard,
+  LearningProgressCard,
+  HappyStudentsCard,
+} from "@/components/home/HeroCards";
 import { coursesData, categoriesList } from "@/data/courses";
 
 export default function HomePage() {
@@ -175,39 +180,18 @@ export default function HomePage() {
             </div>
 
             {/* Floating Card: UI/UX Design (Left) */}
-            <div className="absolute top-[120px] left-[4%] lg:left-[calc(50%-316px)] z-30 w-[180px] sm:w-[208px] h-auto drop-shadow-2xl hidden sm:block hover:-translate-y-1 transition-transform">
-              <Image
-                src="/assets/hero/card-ui-ux.png"
-                alt="UI/UX Design - 200 Courses, 1000+ Students"
-                width={208}
-                height={70}
-                priority
-                className="w-full h-auto object-contain"
-              />
+            <div className="absolute top-[120px] left-[4%] lg:left-[calc(50%-316px)] z-30 hidden sm:block">
+              <UIUXCard />
             </div>
 
             {/* Floating Card: Happy Students (Bottom-Left) */}
-            <div className="absolute bottom-[20px] left-[2%] lg:left-[calc(50%-392px)] z-30 w-[220px] sm:w-[258px] h-auto drop-shadow-2xl hover:-translate-y-1 transition-transform">
-              <Image
-                src="/assets/hero/card-happy-students.png"
-                alt="Happy Students 4.5 (240)"
-                width={258}
-                height={121}
-                priority
-                className="w-full h-auto object-contain"
-              />
+            <div className="absolute bottom-[20px] left-[2%] lg:left-[calc(50%-350px)] z-30">
+              <HappyStudentsCard />
             </div>
 
             {/* Floating Card: Learning Progress (Right) */}
-            <div className="absolute top-[135px] right-[4%] lg:right-auto lg:left-[calc(50%+122px)] z-30 w-[190px] sm:w-[232px] h-auto drop-shadow-2xl hidden sm:block hover:-translate-y-1 transition-transform">
-              <Image
-                src="/assets/hero/card-learning-progress.png"
-                alt="Learning Progress 55%"
-                width={232}
-                height={131}
-                priority
-                className="w-full h-auto object-contain"
-              />
+            <div className="absolute top-[135px] right-[4%] lg:right-auto lg:left-[calc(50%+122px)] z-30 hidden sm:block">
+              <LearningProgressCard />
             </div>
           </div>
         </div>

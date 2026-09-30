@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import AvatarStack from "@/components/ui/AvatarStack";
 import { Course } from "@/data/courses";
 
 interface CourseCardProps {
@@ -87,16 +88,17 @@ export default function CourseCard({ course }: CourseCardProps) {
               </span>
             </span>
 
-            {/* Overlapping Avatars Pile + 26+ (Direct Figma Asset) */}
-            <div className="w-[128px] h-[32px] relative shrink-0">
-              <Image
-                src="/assets/courses/avatar-stack.png"
-                alt="26+ students enrolled"
-                width={128}
-                height={32}
-                className="w-full h-full object-contain"
-              />
-            </div>
+            {/* Reusable AvatarStack Component */}
+            <AvatarStack
+              avatars={[
+                "/assets/avatars/avatar-1.jpg",
+                "/assets/avatars/avatar-2.jpg",
+                "/assets/avatars/avatar-3.jpg",
+                "/assets/avatars/avatar-4.jpg",
+              ]}
+              badge="26+"
+              size="sm"
+            />
           </div>
         </div>
       </div>

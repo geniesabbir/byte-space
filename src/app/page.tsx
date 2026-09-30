@@ -96,37 +96,42 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white text-[#161718] flex flex-col">
-      {/* 1. HERO SECTION (Persian Blue Grid Texture) */}
-      <section className="relative w-full bg-grid-blue text-white overflow-hidden pb-0">
+      {/* 1. HERO SECTION (Persian Blue Grid Texture + Direct Figma Exported Assets) */}
+      <section className="relative w-full bg-[#003BE2] text-white overflow-hidden">
+        {/* Background Grid Texture directly from Figma (Group 4) */}
+        <div className="absolute inset-0 w-full h-[1024px] pointer-events-none select-none z-0">
+          <Image
+            src="/assets/hero/hero-grid.png"
+            alt=""
+            fill
+            priority
+            className="object-cover object-top opacity-30"
+          />
+        </div>
+
+        {/* 3D Ornaments directly exported from Figma (3d ornament) */}
+        <div className="absolute top-[220px] left-1/2 -translate-x-1/2 w-[1440px] h-[804px] pointer-events-none select-none z-10 hidden lg:block">
+          <Image
+            src="/assets/hero/hero-3d-ornaments.png"
+            alt=""
+            fill
+            priority
+            className="object-contain"
+          />
+        </div>
+
         {/* Top Navbar */}
         <Navbar variant="light" />
 
-        {/* Floating 3D Shapes */}
-        <div className="absolute top-24 left-6 md:left-12 lg:left-24 w-16 md:w-24 lg:w-28 opacity-90 pointer-events-none z-10">
-          <LimeWavyPill className="w-full h-auto drop-shadow-2xl" />
-        </div>
-        <div className="absolute top-28 right-6 md:right-16 lg:right-24 w-14 md:w-20 lg:w-24 opacity-90 pointer-events-none z-10">
-          <LimeCylinder className="w-full h-auto drop-shadow-2xl" />
-        </div>
-        <div className="absolute bottom-28 left-8 md:left-20 w-16 md:w-24 opacity-80 pointer-events-none z-10">
-          <WhiteTorus className="w-full h-auto drop-shadow-2xl" />
-        </div>
-        <div className="absolute bottom-24 right-10 md:right-24 w-14 md:w-20 opacity-90 pointer-events-none z-10">
-          <WhiteSpring className="w-full h-auto drop-shadow-2xl" />
-        </div>
-        <div className="absolute top-1/2 right-4 md:right-14 -translate-y-1/2 w-16 md:w-24 opacity-90 pointer-events-none z-10">
-          <LimePyramid className="w-full h-auto drop-shadow-2xl" />
-        </div>
-
         {/* Hero Content Container */}
-        <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px] pt-8 md:pt-14 flex flex-col items-center text-center z-20">
+        <div className="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px] pt-2 md:pt-4 flex flex-col items-center text-center z-20">
           {/* Main Headline */}
-          <h1 className="font-poppins font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] leading-[1.15] tracking-tight max-w-4xl text-white">
-            Get Access to Hundreds Courses Available
+          <h1 className="font-poppins font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[72px] lg:leading-[1.2] tracking-[-0.01em] max-w-[935px] text-white">
+            Get Access to Hundreds <br className="hidden sm:inline" />Courses Available
           </h1>
 
           {/* Subheading */}
-          <p className="mt-6 text-base sm:text-lg md:text-xl text-white/85 max-w-2xl font-normal leading-relaxed">
+          <p className="mt-4 sm:mt-5 font-normal text-base sm:text-lg md:text-[18px] md:leading-[1.6] text-[#E5E6E8] max-w-[819px]">
             Unlock your creativity, gain valuable knowledge, and grow your
             business with our wide range of courses.
           </p>
@@ -134,33 +139,43 @@ export default function HomePage() {
           {/* Search Bar Input */}
           <form
             onSubmit={handleSearch}
-            className="mt-8 md:mt-10 w-full max-w-xl bg-white rounded-full p-2 pl-6 flex items-center shadow-2xl transition-all focus-within:ring-4 focus-within:ring-[#CBFC01]/40"
+            className="mt-6 md:mt-8 w-full max-w-[581px] flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4"
           >
-            <Search className="w-5 h-5 text-[#82868E] shrink-0 mr-3" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Course, topic, creator"
-              className="w-full bg-transparent text-[#161718] placeholder:text-[#82868E] text-sm md:text-base outline-none pr-3"
-            />
+            <div className="w-full sm:w-[461px] h-[52px] bg-white rounded-full px-6 flex items-center gap-3 shadow-lg">
+              <Search className="w-5 h-5 text-[#82868E] shrink-0" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Course, topic, creator"
+                className="w-full bg-transparent text-[#161718] placeholder:text-[#82868E] text-[15px] outline-none"
+              />
+            </div>
             <button
               type="submit"
-              className="px-6 md:px-8 py-3 rounded-full bg-[#CBFC01] text-[#161718] font-poppins font-semibold text-sm hover:brightness-95 transition-all cursor-pointer shrink-0"
+              className="w-full sm:w-[104px] h-[52px] sm:h-[46px] rounded-full bg-[#D4FB20] text-[#161718] font-poppins font-semibold text-sm hover:brightness-95 transition-all shadow-md flex items-center justify-center shrink-0 cursor-pointer"
             >
               Search
             </button>
           </form>
 
-          {/* Center Student Visual with Lime Backdrop and Floating Badges */}
-          <div className="relative mt-12 md:mt-16 w-full max-w-2xl flex justify-center items-end">
-            {/* Electric Lime Arch Backdrop */}
-            <div className="absolute bottom-0 w-[300px] sm:w-[420px] md:w-[480px] h-[220px] sm:h-[300px] md:h-[340px] bg-[#CBFC01] rounded-t-full -z-0" />
+          {/* Center Visual: Exact Figma Student + Lime Ring + 3 Floating Cards */}
+          <div className="relative mt-2 md:mt-4 w-full max-w-[1440px] h-[480px] sm:h-[520px] md:h-[540px] flex justify-center items-end mx-auto">
+            {/* Electric Lime Ring (Ellipse 7) */}
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] sm:w-[900px] md:w-[1149px] h-[270px] sm:h-[350px] md:h-[442px] pointer-events-none z-10">
+              <Image
+                src="/assets/hero/hero-lime-ring.png"
+                alt=""
+                fill
+                priority
+                className="object-contain object-bottom"
+              />
+            </div>
 
             {/* Student Image */}
-            <div className="relative z-10 w-[280px] sm:w-[380px] md:w-[440px] h-[320px] sm:h-[420px] md:h-[480px]">
+            <div className="relative z-20 w-[380px] sm:w-[480px] md:w-[578px] h-[360px] sm:h-[460px] md:h-[541px] pointer-events-none">
               <Image
-                src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=85"
+                src="/assets/hero/hero-student.png"
                 alt="Student holding laptop with headphones"
                 fill
                 priority
@@ -168,76 +183,40 @@ export default function HomePage() {
               />
             </div>
 
-            {/* Floating Card: UI/UX Design (Top-Left) */}
-            <div className="absolute top-12 left-0 sm:-left-8 md:-left-16 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/60 text-left hidden sm:block animate-bounce duration-1000">
-              <p className="font-poppins font-bold text-sm text-[#161718]">
-                UI/UX Design
-              </p>
-              <p className="text-xs text-[#585A62] mt-0.5">
-                200 Courses • 1000+ Students
-              </p>
-            </div>
-
-            {/* Floating Card: Learning Progress (Top-Right) */}
-            <div className="absolute top-16 right-0 sm:-right-8 md:-right-16 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/60 text-left min-w-[170px] hidden sm:block">
-              <p className="text-xs text-[#585A62] font-medium">
-                Learning Progress
-              </p>
-              <p className="font-poppins font-bold text-2xl text-[#161718] mt-1">
-                55%
-              </p>
-              <div className="w-full bg-[#ECEFF2] h-2 rounded-full mt-2 overflow-hidden">
-                <div className="bg-[#CBFC01] h-full w-[55%] rounded-full" />
-              </div>
+            {/* Floating Card: UI/UX Design (Left) */}
+            <div className="absolute top-[120px] left-[4%] lg:left-[calc(50%-316px)] z-30 w-[180px] sm:w-[208px] h-auto drop-shadow-2xl hidden sm:block hover:-translate-y-1 transition-transform">
+              <Image
+                src="/assets/hero/card-ui-ux.png"
+                alt="UI/UX Design - 200 Courses, 1000+ Students"
+                width={208}
+                height={70}
+                priority
+                className="w-full h-auto object-contain"
+              />
             </div>
 
             {/* Floating Card: Happy Students (Bottom-Left) */}
-            <div className="absolute bottom-6 left-2 sm:-left-4 md:-left-12 z-20 bg-white/95 backdrop-blur-md rounded-2xl p-3.5 shadow-xl border border-white/60 text-left">
-              <p className="font-poppins font-bold text-xs text-[#161718]">
-                Happy Students
-              </p>
-              <div className="flex items-center gap-1 mt-0.5 text-xs font-semibold text-[#161718]">
-                <span>4.5</span>
-                <span className="text-[#82868E] font-normal">(240)</span>
-                <Star className="w-3.5 h-3.5 fill-[#CBFC01] text-[#8CB400] ml-0.5" />
-              </div>
-              <div className="flex items-center -space-x-1.5 mt-2">
-                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80"
-                    alt="Student"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
-                    alt="Student"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
-                    alt="Student"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80"
-                    alt="Student"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <span className="w-6 h-6 rounded-full border-2 border-white bg-[#CBFC01] text-black text-[9px] font-bold flex items-center justify-center">
-                  2K+
-                </span>
-              </div>
+            <div className="absolute bottom-[20px] left-[2%] lg:left-[calc(50%-392px)] z-30 w-[220px] sm:w-[258px] h-auto drop-shadow-2xl hover:-translate-y-1 transition-transform">
+              <Image
+                src="/assets/hero/card-happy-students.png"
+                alt="Happy Students 4.5 (240)"
+                width={258}
+                height={121}
+                priority
+                className="w-full h-auto object-contain"
+              />
+            </div>
+
+            {/* Floating Card: Learning Progress (Right) */}
+            <div className="absolute top-[135px] right-[4%] lg:right-auto lg:left-[calc(50%+122px)] z-30 w-[190px] sm:w-[232px] h-auto drop-shadow-2xl hidden sm:block hover:-translate-y-1 transition-transform">
+              <Image
+                src="/assets/hero/card-learning-progress.png"
+                alt="Learning Progress 55%"
+                width={232}
+                height={131}
+                priority
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>

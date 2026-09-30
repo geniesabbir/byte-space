@@ -4,12 +4,12 @@
 [![React 19](https://img.shields.io/badge/React-19.2.8-61DAFB?style=flat&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue?style=flat&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4.x-38B2AC?style=flat&logo=tailwind-css)](https://tailwindcss.com/)
-[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-success?style=flat&logo=vercel)](https://byte-space.vercel.app)
+[![Vercel Deployment](https://img.shields.io/badge/Deployment-Vercel-success?style=flat&logo=vercel)](https://byte-space-eight.vercel.app)
 
 > **Assessment Submission:** Frontend Software Engineer Assessment  
 > **Candidate:** Sabbir  
 > **Figma Design Reference:** [ByteSpace New Check website (Figma)](https://www.figma.com/design/26TBgRjmpuxudcErJsHUfy/ByteSpace-New-Check-website?node-id=0-1&p=f&t=eQOrqJmq6rMG5b6L-0)  
-> **Live Production Link:** [https://byte-space.vercel.app](https://byte-space.vercel.app)  
+> **Live Production Link:** [https://byte-space-eight.vercel.app](https://byte-space-eight.vercel.app)  
 > **Vercel Project Dashboard:** [https://vercel.com/genie-sabbirs-projects/byte-space](https://vercel.com/genie-sabbirs-projects/byte-space)  
 > **GitHub Repository:** [https://github.com/geniesabbir/byte-space](https://github.com/geniesabbir/byte-space)  
 
@@ -23,7 +23,7 @@
 | **2. Login & Sign Up** (Bonus / Extra Credit) | ✅ **Completed** | Modular split layout with live `AuthVisualCluster` composed of real DOM components (`CourseCard`, `HappyStudentsCard`, `AvatarStack`) and 3D layered assets. |
 | **3. Reusable Components & Clean Code** | ✅ **Completed** | Industry-standard component hierarchy, zero monolithic image mockups for UI elements, accessible semantic HTML, strict TypeScript typing. |
 | **4. Git Branching & PR** | ✅ **Completed** | Feature branching workflow followed (`feat/update-UI` merged via PR #2; final submission refactor on `feat/refactor-coddebase-for-submission-guideline`). |
-| **5. Live Vercel Deployment** | ✅ **Completed** | Deployed publicly with instant CDN caching, asset optimization, and zero runtime errors: [https://byte-space.vercel.app](https://byte-space.vercel.app). |
+| **5. Live Vercel Deployment** | ✅ **Completed** | Deployed publicly with instant CDN caching, asset optimization, and zero runtime errors: [https://byte-space-eight.vercel.app](https://byte-space-eight.vercel.app). |
 
 ---
 
@@ -170,7 +170,7 @@ bun run lint
 ## 🌐 Deployment Details
 
 The application is deployed on **Vercel** with automatic continuous deployment enabled:
-- **Production URL:** [https://byte-space.vercel.app](https://byte-space.vercel.app)
+- **Production URL:** [https://byte-space-eight.vercel.app](https://byte-space-eight.vercel.app)
 - **Vercel Project Dashboard:** [https://vercel.com/genie-sabbirs-projects/byte-space](https://vercel.com/genie-sabbirs-projects/byte-space)
 - **Framework Preset:** Next.js (App Router)
 - **Build Engine:** Next.js Turbopack (`next build`)
@@ -181,7 +181,7 @@ The application is deployed on **Vercel** with automatic continuous deployment e
 ## 📝 Reviewer Notes & Verification Checklist
 
 When reviewing the submission, please test the following key areas:
-1. **Landing Page:** Open [https://byte-space.vercel.app](https://byte-space.vercel.app) and scroll through all 9 sections to verify pixel-accuracy against Figma.
+1. **Landing Page:** Open [https://byte-space-eight.vercel.app](https://byte-space-eight.vercel.app) and scroll through all 9 sections to verify pixel-accuracy against Figma.
 2. **Category Filter:** Click between category pills in the "Discover Your Passion" section to see the active lime indicator update.
 3. **Course Cards:** Hover over course cards to see smooth elevation micro-interactions and examine the live `AvatarStack` student counters.
 4. **Login Page:** Navigate to `/login` to view the split-screen layout with the live `AuthVisualCluster` (real DOM course cards, electric lime Happy Students card, and floating 3D shapes).

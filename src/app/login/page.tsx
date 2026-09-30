@@ -3,14 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Star, BarChart2, Eye, EyeOff } from "lucide-react";
-import Logo from "@/components/Logo";
-import { LimeTorus, LimePyramid, WhiteSpring } from "@/components/Abstract3DShapes";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -18,165 +14,79 @@ export default function LoginPage() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-grid-blue flex items-center justify-center p-4 sm:p-8 lg:p-12 relative overflow-hidden">
-      {/* Background Decorative Shapes */}
-      <div className="absolute top-10 right-10 w-24 opacity-60 pointer-events-none">
-        <WhiteSpring className="w-full h-auto" />
-      </div>
+    <main className="min-h-screen w-full bg-[#003BE2] relative overflow-hidden flex flex-col justify-between pt-[35px] pb-12 lg:pb-[120px] px-6 sm:px-12 lg:px-[122px]">
+      {/* Subtle white grid background texture matching Figma Group 4 */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.12]"
+        style={{
+          backgroundImage: "url('/assets/cta/cta-grid.png')",
+          backgroundRepeat: "repeat",
+          backgroundSize: "1440px auto",
+          backgroundPosition: "top center",
+        }}
+      />
 
-      <div className="w-full max-w-[1360px] min-h-[720px] grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        {/* Left Side: Brand & Floating Cards */}
-        <div className="lg:col-span-6 flex flex-col justify-between h-full py-4 text-white">
-          <div>
-            <Logo variant="light" className="text-3xl" />
+      {/* Top Header with ByteSpace Logo Icon (matching Figma x:122px, y:35px) */}
+      <header className="relative z-10 w-full max-w-[1196px] mx-auto">
+        <Link href="/" className="inline-block transition-opacity hover:opacity-90">
+          <Image
+            src="/assets/auth/logo-icon.png"
+            alt="ByteSpace"
+            width={29}
+            height={32}
+            className="w-[29px] h-[32px] object-contain"
+            priority
+          />
+        </Link>
+      </header>
 
-            <div className="mt-8 max-w-lg">
-              <h1 className="font-poppins font-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight text-white">
-                Sign in with ease
-              </h1>
-              <p className="mt-4 text-white/80 text-sm sm:text-base leading-relaxed">
-                Experience a seamless and efficient sign-in process that grants
-                you instant access to a world of knowledge.
-              </p>
-            </div>
+      {/* Main Content Row (Top: 120px in Figma, starts 53px below logo) */}
+      <div className="relative z-10 w-full max-w-[1196px] mx-auto mt-8 lg:mt-[53px] flex flex-col lg:flex-row items-center lg:items-start justify-between gap-12 lg:gap-[69px]">
+        {/* Left Side: Text Heading and 3D Visual Cluster (Group 8 in Figma) */}
+        <div className="w-full lg:w-[548px] shrink-0 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* Text block */}
+          <div className="max-w-[475px]">
+            <h1 className="font-poppins font-semibold text-2xl sm:text-[20px] leading-[120%] tracking-[-0.01em] text-[#F5F5F6]">
+              Sign in with ease
+            </h1>
+            <p className="mt-4 font-satoshi font-normal text-base sm:text-[18px] leading-[160%] text-[#F5F5F6]">
+              Experience a seamless and efficient sign-in process that grants you
+              instant access to a world of knowledge.
+            </p>
           </div>
 
-          {/* Interactive Floating Course Showcase Graphic */}
-          <div className="relative mt-8 sm:mt-12 w-full max-w-md mx-auto lg:mx-0">
-            {/* 3D Shapes around the card */}
-            <div className="absolute -top-6 -left-6 w-14 h-14 z-30">
-              <LimeTorus className="w-full h-full drop-shadow-xl" />
-            </div>
-            <div className="absolute -bottom-8 -left-8 w-16 h-16 z-30">
-              <LimePyramid className="w-full h-full drop-shadow-xl" />
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-16 h-16 z-30">
-              <WhiteSpring className="w-full h-full drop-shadow-xl" />
-            </div>
-
-            {/* Back Card (Partially Visible) */}
-            <div className="absolute -top-4 -left-6 w-full bg-white/40 backdrop-blur-sm rounded-[24px] p-4 opacity-50 transform -rotate-3 -z-10 h-[280px]" />
-
-            {/* Main Featured Course Card */}
-            <div className="relative bg-white rounded-[24px] p-4 shadow-2xl text-[#161718] border border-white/80">
-              <div className="relative w-full h-[140px] rounded-[18px] overflow-hidden bg-neutral-900">
-                <Image
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80"
-                  alt="the Power of Big Data"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between text-[10px] text-white">
-                  <span className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full">
-                    17 Lessons
-                  </span>
-                  <span className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full">
-                    2 hours 16 mins
-                  </span>
-                  <span className="bg-black/60 backdrop-blur-md px-2 py-0.5 rounded-full">
-                    59 Comments
-                  </span>
-                </div>
-              </div>
-
-              <div className="pt-3">
-                <div className="flex items-center justify-between">
-                  <h3 className="font-poppins font-bold text-sm text-[#161718]">
-                    the Power of Big Data
-                  </h3>
-                  <div className="flex items-center gap-1 text-xs font-semibold">
-                    <span>4.5</span>
-                    <Star className="w-3.5 h-3.5 fill-[#CBFC01] text-[#8CB400]" />
-                  </div>
-                </div>
-                <p className="text-[11px] text-[#82868E] mt-0.5">
-                  by <span className="text-[#003BE2]">purepearl studio</span>
-                </p>
-
-                <div className="mt-3 flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#F5F6F7] text-[11px] font-medium text-[#4B4C53]">
-                    <BarChart2 className="w-3 h-3 text-[#003BE2]" />
-                    Beginner
-                  </span>
-
-                  <div className="flex items-center -space-x-1.5">
-                    <div className="w-5 h-5 rounded-full border border-white bg-neutral-300 relative overflow-hidden">
-                      <Image
-                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=40&q=80"
-                        alt="student"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <div className="w-5 h-5 rounded-full border border-white bg-neutral-300 relative overflow-hidden">
-                      <Image
-                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&q=80"
-                        alt="student"
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
-                    <span className="w-5 h-5 rounded-full border border-white bg-[#161718] text-white text-[8px] font-bold flex items-center justify-center">
-                      26+
-                    </span>
-                  </div>
-                </div>
-
-                <div className="mt-3 pt-2 border-t border-[#ECEFF2] flex items-baseline gap-1">
-                  <span className="font-poppins font-bold text-base text-[#003BE2]">
-                    $25
-                  </span>
-                  <span className="text-[11px] text-[#82868E]">/lifetime</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Overlapping Lime "Happy Students" Card */}
-            <div className="absolute -bottom-8 right-0 sm:-right-4 bg-[#CBFC01] rounded-2xl p-3 shadow-xl text-black border border-white/60 min-w-[190px]">
-              <p className="font-poppins font-bold text-xs">Happy Students</p>
-              <div className="flex items-center gap-1 text-xs font-semibold mt-0.5">
-                <span>4.5</span>
-                <span className="font-normal text-neutral-800">(240)</span>
-                <Star className="w-3.5 h-3.5 fill-black text-black ml-0.5" />
-              </div>
-              <div className="flex items-center -space-x-1 mt-2">
-                <div className="w-5 h-5 rounded-full border border-white overflow-hidden relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=40&q=80"
-                    alt="avatar"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="w-5 h-5 rounded-full border border-white overflow-hidden relative">
-                  <Image
-                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=40&q=80"
-                    alt="avatar"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <span className="w-5 h-5 rounded-full border border-white bg-black text-white text-[8px] font-bold flex items-center justify-center">
-                  2K+
-                </span>
-              </div>
-            </div>
+          {/* 3D Shapes & Course Cards Visual Cluster */}
+          <div className="mt-8 lg:mt-[44px] w-full max-w-[480px] sm:max-w-[548px] relative">
+            <Image
+              src="/assets/auth/auth-visual.webp"
+              alt="ByteSpace interactive learning preview"
+              width={548}
+              height={585}
+              priority
+              className="w-full h-auto object-contain drop-shadow-2xl"
+            />
           </div>
         </div>
 
-        {/* Right Side: White Login Card */}
-        <div className="lg:col-span-6 flex justify-center lg:justify-end">
-          <div className="w-full max-w-lg bg-white rounded-[32px] p-8 sm:p-12 shadow-2xl text-[#161718]">
-            <p className="text-[#003BE2] font-semibold text-sm">Sign In</p>
-            <h2 className="font-poppins font-bold text-3xl sm:text-4xl text-[#161718] mt-1">
-              Welcome Back
-            </h2>
+        {/* Right Side: Figma-Accurate White Login Card (Register_Frame in Figma: 579x784) */}
+        <div className="w-full lg:w-[579px] h-auto lg:h-[784px] bg-white rounded-[24px] p-8 sm:p-12 lg:px-[63px] lg:pt-[48px] lg:pb-[44px] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.3)] text-[#242528] shrink-0 flex flex-col justify-between">
+          {/* Top block: Header + Inputs + Submit Button */}
+          <div>
+            <div>
+              <p className="font-satoshi font-normal text-base sm:text-[18px] leading-[160%] text-[#003BE2]">
+                Sign In
+              </p>
+              <h2 className="font-poppins font-semibold text-3xl sm:text-[44px] leading-[120%] tracking-[-0.01em] text-[#242528] mt-1">
+                Welcome Back
+              </h2>
+            </div>
 
-            <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+            {/* Form Fields */}
+            <form onSubmit={handleSubmit} className="mt-8 sm:mt-10 space-y-6">
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-xs font-medium text-[#4B4C53] mb-1.5"
+                  className="block font-satoshi font-medium text-[14px] leading-[120%] text-[#242528] mb-2"
                 >
                   Email
                 </label>
@@ -187,111 +97,89 @@ export default function LoginPage() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="designer@example.com"
                   required
-                  className="w-full px-4 py-3.5 rounded-xl border border-[#DAE0E5] text-sm focus:outline-none focus:border-[#003BE2] focus:ring-2 focus:ring-[#003BE2]/10 transition-all text-[#161718] placeholder:text-[#B2B8BE]"
+                  className="w-full h-[52px] px-6 rounded-[12px] border border-[#E5E6E8] bg-white text-[#242528] placeholder:text-[#82868E] font-satoshi text-base sm:text-[16px] focus:outline-none focus:border-[#003BE2] transition-colors"
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="password"
-                  className="block text-xs font-medium text-[#4B4C53] mb-1.5"
+                  className="block font-satoshi font-medium text-[14px] leading-[120%] text-[#242528] mb-2"
                 >
                   Password
                 </label>
-                <div className="relative">
-                  <input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••"
-                    required
-                    className="w-full px-4 py-3.5 rounded-xl border border-[#DAE0E5] text-sm focus:outline-none focus:border-[#003BE2] focus:ring-2 focus:ring-[#003BE2]/10 transition-all text-[#161718] placeholder:text-[#B2B8BE] pr-11"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#82868E] hover:text-[#161718]"
-                  >
-                    {showPassword ? (
-                      <EyeOff className="w-4 h-4" />
-                    ) : (
-                      <Eye className="w-4 h-4" />
-                    )}
-                  </button>
-                </div>
+                <input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="********"
+                  required
+                  className="w-full h-[52px] px-6 rounded-[12px] border border-[#E5E6E8] bg-white text-[#242528] placeholder:text-[#82868E] font-satoshi text-base sm:text-[16px] focus:outline-none focus:border-[#003BE2] transition-colors"
+                />
               </div>
 
-              <div className="flex justify-end pt-2">
+              {/* Right-aligned pill button */}
+              <div className="flex justify-end pt-1">
                 <button
                   type="submit"
-                  className="px-8 py-3 rounded-full bg-[#CBFC01] text-[#161718] font-poppins font-semibold text-sm hover:brightness-95 transition-all shadow-sm cursor-pointer"
+                  className="h-[46px] px-8 rounded-full bg-[#D4FB20] text-[#1D1F2C] font-poppins font-semibold text-[15px] leading-[120%] hover:brightness-95 transition-all cursor-pointer shadow-sm"
                 >
                   Sign In
                 </button>
               </div>
             </form>
+          </div>
 
-            {/* Divider */}
-            <div className="relative my-8 flex items-center justify-center">
-              <div className="w-full border-t border-[#ECEFF2]" />
-              <span className="absolute bg-white px-3 text-xs text-[#82868E]">
+          {/* Middle block: Social Logins Divider & Buttons */}
+          <div className="my-8 sm:my-auto py-2">
+            <div className="relative flex items-center justify-center mb-6">
+              <div className="w-full border-t border-[#D1D1D1]" />
+              <span className="absolute bg-white px-3 font-satoshi text-[16px] text-[#82868E]">
                 or
               </span>
             </div>
 
-            {/* Social Logins */}
+            {/* Facebook & Google Buttons (Figma 72x72 rounded-[24px]) */}
             <div className="flex items-center justify-center gap-4">
-              {/* Facebook */}
               <button
                 type="button"
-                className="w-12 h-12 rounded-full border border-[#DAE0E5] flex items-center justify-center hover:bg-[#F5F6F7] transition-colors"
+                className="w-[72px] h-[72px] rounded-[24px] border border-[#D1D1D1] bg-white flex items-center justify-center hover:bg-[#F9F9F9] transition-all cursor-pointer shadow-sm p-0 overflow-hidden"
                 aria-label="Sign in with Facebook"
               >
-                <svg
-                  className="w-5 h-5 fill-[#1877F2]"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                </svg>
+                <Image
+                  src="/assets/auth/facebook.png"
+                  alt="Facebook"
+                  width={72}
+                  height={72}
+                  className="w-full h-full object-contain"
+                />
               </button>
-
-              {/* Google */}
               <button
                 type="button"
-                className="w-12 h-12 rounded-full border border-[#DAE0E5] flex items-center justify-center hover:bg-[#F5F6F7] transition-colors"
+                className="w-[72px] h-[72px] rounded-[24px] border border-[#D1D1D1] bg-white flex items-center justify-center hover:bg-[#F9F9F9] transition-all cursor-pointer shadow-sm p-0 overflow-hidden"
                 aria-label="Sign in with Google"
               >
-                <svg className="w-5 h-5" viewBox="0 0 24 24">
-                  <path
-                    fill="#4285F4"
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                  />
-                  <path
-                    fill="#34A853"
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                  />
-                  <path
-                    fill="#FBBC05"
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"
-                  />
-                  <path
-                    fill="#EA4335"
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"
-                  />
-                </svg>
+                <Image
+                  src="/assets/auth/google.png"
+                  alt="Google"
+                  width={72}
+                  height={72}
+                  className="w-full h-full object-contain"
+                />
               </button>
             </div>
+          </div>
 
-            <p className="mt-8 text-center text-xs text-[#585A62]">
-              New user?{" "}
-              <Link
-                href="/register"
-                className="text-[#003BE2] font-semibold hover:underline"
-              >
-                Create an account
-              </Link>
-            </p>
+          {/* Bottom account link */}
+          <div className="text-center font-satoshi text-[16px] leading-[160%]">
+            <span className="text-[#888888]">New user? </span>
+            <Link
+              href="/register"
+              className="text-[#003BE2] hover:underline"
+            >
+              Create an account
+            </Link>
           </div>
         </div>
       </div>

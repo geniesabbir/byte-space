@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import AuthVisualCluster from "@/components/auth/AuthVisualCluster";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -56,15 +57,8 @@ export default function LoginPage() {
           </div>
 
           {/* 3D Shapes & Course Cards Visual Cluster */}
-          <div className="mt-8 lg:mt-[44px] w-full max-w-[480px] sm:max-w-[548px] relative">
-            <Image
-              src="/assets/auth/auth-visual.webp"
-              alt="ByteSpace interactive learning preview"
-              width={548}
-              height={585}
-              priority
-              className="w-full h-auto object-contain drop-shadow-2xl"
-            />
+          <div className="mt-8 lg:mt-[44px] w-full max-w-[480px] sm:max-w-[548px] relative flex justify-center lg:justify-start">
+            <AuthVisualCluster />
           </div>
         </div>
 

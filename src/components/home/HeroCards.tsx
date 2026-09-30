@@ -50,23 +50,55 @@ export function LearningProgressCard({ className = "" }: CardProps) {
   );
 }
 
+export interface HappyStudentsCardProps {
+  className?: string;
+  variant?: "white" | "lime";
+}
+
 /**
  * Happy Students floating card component with rating and reusable AvatarStack
- * Matches Figma 258px width, 22px rounded corners
+ * Matches Figma 258px width, 22px rounded corners, and supports white and lime variants
  */
-export function HappyStudentsCard({ className = "" }: CardProps) {
+export function HappyStudentsCard({
+  className = "",
+  variant = "white",
+}: HappyStudentsCardProps) {
+  const isLime = variant === "lime";
+
   return (
     <div
-      className={`w-[258px] bg-white rounded-[22px] p-4 shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-[#F0F1F3]/80 text-left transition-transform duration-300 hover:-translate-y-1 select-none ${className}`}
+      className={`w-[258px] ${
+        isLime
+          ? "bg-[#D4FB20] rounded-[16px] shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
+          : "bg-white rounded-[22px] shadow-[0_12px_32px_rgba(0,0,0,0.12)] border border-[#F0F1F3]/80"
+      } p-4 text-left transition-transform duration-300 hover:-translate-y-1 select-none ${className}`}
     >
-      <h4 className="font-satoshi font-semibold text-[14px] sm:text-[15px] leading-[120%] text-[#242528]">
+      <h4
+        className={`font-satoshi font-semibold text-[14px] sm:text-[15px] leading-[120%] ${
+          isLime ? "text-[#161718]" : "text-[#242528]"
+        }`}
+      >
         Happy Students
       </h4>
-      <div className="mt-1 mb-2.5 flex items-center gap-1 font-satoshi text-[12px] sm:text-[13px] leading-none text-[#242528]">
+      <div
+        className={`mt-1 mb-2.5 flex items-center gap-1 font-satoshi text-[12px] sm:text-[13px] leading-none ${
+          isLime ? "text-[#161718]" : "text-[#242528]"
+        }`}
+      >
         <span className="font-semibold text-[#161718]">4.5</span>
-        <span className="text-[#82868E] font-normal">(240)</span>
+        <span
+          className={
+            isLime ? "text-[#161718]/80 font-normal" : "text-[#82868E] font-normal"
+          }
+        >
+          (240)
+        </span>
         <svg
-          className="w-3.5 h-3.5 text-[#D4FB20] fill-[#D4FB20] ml-0.5"
+          className={`w-3.5 h-3.5 ml-0.5 ${
+            isLime
+              ? "text-[#003BE2] fill-[#003BE2]"
+              : "text-[#D4FB20] fill-[#D4FB20]"
+          }`}
           viewBox="0 0 20 20"
         >
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -86,6 +118,9 @@ export function HappyStudentsCard({ className = "" }: CardProps) {
             "/assets/avatars/avatar-7.jpg",
           ]}
           badge="2K+"
+          badgeBg={isLime ? "#161718" : "#D4FB20"}
+          badgeTextColor={isLime ? "#FFFFFF" : "#161718"}
+          ringColor="border-white"
           size="md"
         />
       </div>

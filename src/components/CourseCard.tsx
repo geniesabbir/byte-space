@@ -5,11 +5,19 @@ import { Course } from "@/data/courses";
 
 interface CourseCardProps {
   course: Course;
+  className?: string;
+  starColor?: string;
 }
 
-export default function CourseCard({ course }: CourseCardProps) {
+export default function CourseCard({
+  course,
+  className = "",
+  starColor,
+}: CourseCardProps) {
   return (
-    <div className="w-full max-w-[373px] bg-white rounded-[24px] border border-[#CED0D3] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group">
+    <div
+      className={`w-full max-w-[373px] bg-white rounded-[24px] border border-[#CED0D3] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group ${className}`}
+    >
       <div>
         {/* Course Thumbnail with exact Figma chips baked in */}
         <Link
@@ -44,7 +52,7 @@ export default function CourseCard({ course }: CourseCardProps) {
                 width="18"
                 height="18"
                 viewBox="0 0 24 24"
-                fill="#CED0D3"
+                fill={starColor || "#CED0D3"}
                 xmlns="http://www.w3.org/2000/svg"
                 className="shrink-0"
               >

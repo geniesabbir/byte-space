@@ -62,29 +62,26 @@ export default function HomePage() {
     {
       id: 1,
       name: "Sarah M.",
-      role: "UI/UX Designer",
-      avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+      role: "Enthusiastic Learner",
+      avatar: "/assets/testimonials/avatar-sarah.png",
       content:
-        "ByteSpace has completely transformed my approach to learning. The diverse range of courses and interactive lessons made complex topics easy to grasp. The community support is incredible!",
+        "ByteSpace has transformed my approach to learning. The diverse range of courses and the quality of content provided by creators have exceeded my expectations. The platform truly fosters a sense of community and lifelong learning.",
     },
     {
       id: 2,
       name: "James L.",
-      role: "Marketing Specialist",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+      role: "Lifelong Learner",
+      avatar: "/assets/testimonials/avatar-james.png",
       content:
-        "As a creator, ByteSpace has been a game-changer for me. The Course Editor is intuitive, and the platform's reach has helped me connect with learners worldwide. Truly empowering!",
+        "I've tried several online learning platforms, and ByteSpace stands out for its vibrant community and the variety of courses available. The easy navigation and engaging content make it a go-to platform for continuous skill development.",
     },
     {
       id: 3,
-      name: "Alex R.",
-      role: "Full-Stack Developer",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+      name: "Alex B.",
+      role: "Inspired Creator",
+      avatar: "/assets/testimonials/avatar-alex.png",
       content:
-        "The quality of instruction and practical projects on ByteSpace exceeded my expectations. It helped me advance my career and build real-world applications with confidence.",
+        "As a creator, ByteSpace has been a game-changer for me. The Course Editor is user-friendly, and the support from the community is incredible. It's fulfilling to see my courses making a positive impact on learners globally.",
     },
   ];
 
@@ -296,16 +293,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. YOUR PATH TO PROFESSIONAL GROWTH STARTS HERE */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-6 space-y-6">
-              <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[44px] text-[#161718] leading-tight">
-                Your Path to Professional Growth Starts Here!
+      {/* 5. PROFESSIONAL GROWTH & COURSE MANAGEMENT SHOWCASE (Frame 15 in Figma) */}
+      <section className="py-20 lg:py-[120px] bg-[#FAFAFA] relative overflow-hidden">
+        {/* Soft Background Blur Glows */}
+        <div className="absolute top-[10%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[#D4FB20]/10 blur-[120px] pointer-events-none" />
+        <div className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full bg-[#003BE2]/5 blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-[#D4FB20]/10 blur-[120px] pointer-events-none" />
+
+        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[121px] space-y-20 lg:space-y-[72px] relative z-10">
+          {/* Feature 1: Your Path to Professional Growth Starts Here! (Frame 13 in Figma) */}
+          <div className="max-w-[1258px] mx-auto flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-[63px]">
+            {/* Left Content (Text in Figma: Width 574px) */}
+            <div className="w-full lg:max-w-[574px] space-y-6 lg:space-y-8">
+              <h2 className="font-poppins font-semibold text-3xl sm:text-4xl md:text-[44px] text-[#242528] leading-[120%] tracking-[-0.01em]">
+                Your Path to Professional
+                <br className="hidden sm:inline" /> Growth Starts Here!
               </h2>
-              <p className="text-[#585A62] text-sm sm:text-base leading-relaxed">
+              <p className="font-satoshi font-normal text-base sm:text-[18px] text-[#4B4C53] leading-[160%] max-w-[477px]">
                 Explore our curated selection of courses tailored to enhance
                 your capabilities and accelerate your career journey. Whether
                 you are looking to sharpen specific skills, gain industry
@@ -313,212 +317,95 @@ export default function HomePage() {
                 resources you need.
               </p>
 
-              {/* Stats Numbers */}
-              <div className="pt-6 grid grid-cols-3 gap-6">
+              {/* Stats Row (Auto Layout Horizontal in Figma: Gap 56px) */}
+              <div className="pt-2 flex items-center gap-8 sm:gap-[56px]">
                 <div>
-                  <p className="font-poppins font-bold text-3xl sm:text-4xl text-[#003BE2]">
+                  <p className="font-poppins font-semibold text-3xl sm:text-4xl text-[#003BE2] leading-[120%]">
                     12K
                   </p>
-                  <p className="text-sm text-[#585A62] mt-1 font-medium">
+                  <p className="font-satoshi font-medium text-sm sm:text-base text-[#585A62] mt-1.5">
                     Students
                   </p>
                 </div>
                 <div>
-                  <p className="font-poppins font-bold text-3xl sm:text-4xl text-[#003BE2]">
+                  <p className="font-poppins font-semibold text-3xl sm:text-4xl text-[#003BE2] leading-[120%]">
                     70+
                   </p>
-                  <p className="text-sm text-[#585A62] mt-1 font-medium">
+                  <p className="font-satoshi font-medium text-sm sm:text-base text-[#585A62] mt-1.5">
                     Courses
                   </p>
                 </div>
                 <div>
-                  <p className="font-poppins font-bold text-3xl sm:text-4xl text-[#003BE2]">
+                  <p className="font-poppins font-semibold text-3xl sm:text-4xl text-[#003BE2] leading-[120%]">
                     16
                   </p>
-                  <p className="text-sm text-[#585A62] mt-1 font-medium">
+                  <p className="font-satoshi font-medium text-sm sm:text-base text-[#585A62] mt-1.5">
                     Creators
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Right Visual Frame */}
-            <div className="lg:col-span-6 relative flex justify-center items-center min-h-[440px]">
-              {/* Soft Lime Glow & Abstract Shape Behind */}
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 w-48 h-48 opacity-90 pointer-events-none z-0">
-                <LimeWavyPill className="w-full h-auto drop-shadow-xl" />
-              </div>
-
-              {/* Student Person visual */}
-              <div className="relative z-10 w-[300px] sm:w-[360px] md:w-[400px] h-[380px] sm:h-[440px]">
-                <Image
-                  src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=85"
-                  alt="Student with headphones and laptop"
-                  fill
-                  className="object-contain object-bottom drop-shadow-2xl"
-                />
-              </div>
-
-              {/* Floating Course Card Overlay (Left) */}
-              <div className="absolute top-10 -left-2 sm:left-2 md:left-6 z-20 bg-white rounded-2xl p-3.5 shadow-2xl border border-gray-100 max-w-[260px]">
-                <div className="relative w-full h-[100px] rounded-xl overflow-hidden mb-2.5">
-                  <Image
-                    src="https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=400&q=80"
-                    alt="Course preview"
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute bottom-2 left-2 flex gap-1">
-                    <span className="bg-black/60 backdrop-blur-md text-white text-[9px] px-2 py-0.5 rounded-full font-medium">
-                      17 Lessons
-                    </span>
-                    <span className="bg-black/60 backdrop-blur-md text-white text-[9px] px-2 py-0.5 rounded-full font-medium">
-                      2 hours 16 mins
-                    </span>
-                  </div>
-                </div>
-                <h4 className="font-poppins font-bold text-xs text-[#161718] truncate">
-                  Learn Figma from Basic
-                </h4>
-                <p className="text-[10px] text-[#585A62] mt-0.5">
-                  by <span className="text-[#003BE2] font-medium">purepearl studio</span>
-                </p>
-                <div className="flex items-center justify-between mt-2 pt-2 border-t border-gray-100">
-                  <span className="inline-flex items-center gap-1 text-[10px] bg-[#ECEFF2] text-[#585A62] px-2 py-0.5 rounded-full font-medium">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#003BE2]" />
-                    Beginner
-                  </span>
-                  <p className="font-poppins font-bold text-sm text-[#003BE2]">
-                    $25<span className="text-[9px] text-[#82868E] font-normal">/lifetime</span>
-                  </p>
-                </div>
-              </div>
-
-              {/* Floating Progress Card Overlay (Right) */}
-              <div className="absolute bottom-12 -right-2 sm:right-2 md:right-4 z-20 bg-white rounded-2xl p-4 shadow-2xl border border-gray-100 min-w-[170px]">
-                <p className="text-xs text-[#585A62] font-medium">Learning Progress</p>
-                <p className="font-poppins font-bold text-2xl text-[#161718] mt-1">55%</p>
-                <div className="w-full bg-[#ECEFF2] h-2 rounded-full mt-2 overflow-hidden">
-                  <div className="bg-[#CBFC01] h-full w-[55%] rounded-full" />
-                </div>
-              </div>
+            {/* Right Visual (Frame 11 in Figma: Width 621px, Height 552px) */}
+            <div className="w-full lg:w-[621px] max-w-[621px] shrink-0">
+              <Image
+                src="/assets/growth/growth-visual.png"
+                alt="Student learning progress and course preview"
+                width={621}
+                height={552}
+                className="w-full h-auto object-contain"
+                priority
+              />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* 6. CREATE & MANAGE COURSES EASILY */}
-      <section className="py-20 lg:py-28 bg-[#F5F6F7]/60 border-t border-[#ECEFF2]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-            {/* Left Visual Frame with Earnings cards */}
-            <div className="lg:col-span-6 relative flex justify-center order-2 lg:order-1">
-              <div className="relative w-full max-w-md h-[440px] rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
-                  alt="Creator presenting online course"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-                {/* Floating Earning Card 1 */}
-                <div className="absolute top-8 left-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/60">
-                  <p className="text-xs text-[#585A62] font-medium">Daily Revenue</p>
-                  <p className="font-poppins font-bold text-xl text-[#003BE2] mt-0.5">
-                    $100.29
-                  </p>
-                  <div className="flex items-center gap-1 text-[11px] text-green-600 font-semibold mt-1">
-                    <TrendingUp className="w-3.5 h-3.5" />
-                    +18.4% this week
-                  </div>
-                </div>
-
-                {/* Floating Earning Card 2 */}
-                <div className="absolute bottom-8 right-6 bg-white/95 backdrop-blur-md rounded-2xl p-4 shadow-xl border border-white/60">
-                  <p className="text-xs text-[#585A62] font-medium">Monthly Payout</p>
-                  <p className="font-poppins font-bold text-2xl text-[#161718] mt-0.5">
-                    $2,000.00
-                  </p>
-                  <p className="text-[11px] text-[#82868E] mt-1">
-                    Direct bank transfer enabled
-                  </p>
-                </div>
-              </div>
+          {/* Feature 2: Create & Manage Courses Easily. (Frame 14 in Figma) */}
+          <div className="max-w-[1258px] mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-12 lg:gap-[79px]">
+            {/* Left Visual (Frame 12 in Figma: Width 580px) */}
+            <div className="w-full lg:w-[540px] max-w-[540px] shrink-0 flex justify-center">
+              <Image
+                src="/assets/growth/creator-visual.png"
+                alt="Course creator analytics and student satisfaction"
+                width={540}
+                height={596}
+                className="w-full h-auto object-contain"
+              />
             </div>
 
-            {/* Right Content */}
-            <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
-              <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[44px] text-[#161718] leading-tight">
-                Create &amp; Manage Courses Easily.
+            {/* Right Content (Text in Figma: Width 580px) */}
+            <div className="w-full lg:max-w-[580px] space-y-6 lg:space-y-8">
+              <h2 className="font-poppins font-semibold text-3xl sm:text-4xl md:text-[44px] text-[#242528] leading-[120%] tracking-[-0.01em]">
+                Create &amp; Manage
+                <br className="hidden sm:inline" /> Courses Easily.
               </h2>
-              <p className="text-[#585A62] text-sm sm:text-base leading-relaxed">
-                Experience seamless course management with features designed for
-                effortless creation, publication, and optimization of
-                educational content.
+              <p className="font-satoshi font-normal text-base sm:text-[18px] text-[#4B4C53] leading-[160%] max-w-[574px]">
+                ByteSpace supports individuals or entities in the creation,
+                publication, and administration of educational courses.
               </p>
 
-              {/* Bullet points */}
+              {/* Bullet Points (4 items with checkmark circle) */}
               <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#003BE2] text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
+                {[
+                  "Share Your Expertise",
+                  "Monetize Your Passion",
+                  "Flexibility and Autonomy",
+                  "Build a Community",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <div className="w-6 h-6 shrink-0 relative">
+                      <Image
+                        src="/assets/growth/check-circle.png"
+                        alt="check"
+                        width={24}
+                        height={24}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <span className="font-satoshi font-medium text-base sm:text-[18px] leading-[120%] text-[#242528]">
+                      {item}
+                    </span>
                   </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-base text-[#161718]">
-                      Share Your Expertise
-                    </h4>
-                    <p className="text-sm text-[#585A62] mt-0.5">
-                      Publish video modules, quizzes, and project files with a
-                      streamlined drag-and-drop course builder.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#003BE2] text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-base text-[#161718]">
-                      Monetize Your Passion
-                    </h4>
-                    <p className="text-sm text-[#585A62] mt-0.5">
-                      Set flexible pricing, lifetime access packages, and retain
-                      industry-leading creator earnings.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#003BE2] text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-base text-[#161718]">
-                      Flexibility and Autonomy
-                    </h4>
-                    <p className="text-sm text-[#585A62] mt-0.5">
-                      Teach on your own schedule with complete freedom over
-                      curriculum design and student interactions.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-[#003BE2] text-white flex items-center justify-center shrink-0 mt-0.5">
-                    <CheckCircle2 className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-base text-[#161718]">
-                      Build a Community
-                    </h4>
-                    <p className="text-sm text-[#585A62] mt-0.5">
-                      Engage with dedicated students through live Q&amp;A sessions,
-                      discussions, and peer reviews.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -526,104 +413,111 @@ export default function HomePage() {
       </section>
 
       {/* 7. UNLOCK YOUR POTENTIAL AS A CREATOR (CTA Banner) */}
-      <section className="py-20 lg:py-24 bg-white">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
-          <div className="relative rounded-[32px] bg-grid-blue p-8 sm:p-12 md:p-16 lg:p-20 text-center text-white overflow-hidden shadow-2xl">
-            {/* 3D Floating Accents */}
-            <div className="absolute top-6 left-6 w-16 opacity-80 pointer-events-none">
-              <LimeTorus className="w-full h-auto" />
-            </div>
-            <div className="absolute bottom-6 right-8 w-16 opacity-80 pointer-events-none">
-              <WhiteSpring className="w-full h-auto" />
-            </div>
+      <section className="relative w-full bg-[#003BE2] overflow-hidden py-16 md:py-20 lg:py-[104px]">
+        {/* Subtle white grid texture exported from Figma Group 4 */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-20"
+          style={{
+            backgroundImage: "url('/assets/cta/cta-grid.png')",
+            backgroundRepeat: "repeat",
+            backgroundSize: "1440px auto",
+            backgroundPosition: "center",
+          }}
+        />
 
-            <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-              <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[40px] leading-tight text-white">
-                Unlock Your Potential as a Creator with ByteSpace
-              </h2>
-              <p className="text-sm sm:text-base text-white/85 leading-relaxed">
-                Experience the collaborative environment and extensive
-                potential as a Creator. Register now and become a part of a
-                community empowering learners with fresh insights. Unleash your
-                expertise and empower learners with your expertise by publishing
-                your first course on the ByteSpace Course Library.
-              </p>
-              <div className="pt-2">
-                <Link
-                  href="/register"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#CBFC01] text-[#161718] font-poppins font-semibold text-sm hover:brightness-95 transition-all shadow-md"
-                >
-                  Join as Creator
-                  <Sparkles className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
+        {/* 3D Floating Shapes composite exported from Figma Group 6 */}
+        <div className="absolute inset-0 pointer-events-none flex items-center justify-center">
+          <div className="relative w-full max-w-[1440px] h-full min-h-[488px]">
+            <Image
+              src="/assets/cta/cta-shapes.png"
+              alt="3D Shapes"
+              fill
+              className="object-contain pointer-events-none"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Text Content */}
+        <div className="relative z-10 max-w-[800px] mx-auto text-center px-4 sm:px-6">
+          <h2 className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-white">
+            Unlock Your Potential as a<br className="hidden sm:inline" /> Creator with ByteSpace
+          </h2>
+          <p className="font-satoshi font-normal text-sm sm:text-base lg:text-[18px] leading-[160%] text-white/90 max-w-[760px] mx-auto mt-6">
+            Experience the collaboration of numerous creators and an expanding
+            selection of courses. Register now and become a part of a community
+            comprising over 10,000 local and international creators. Utilize our
+            Course Editor, and showcase your expertise by publishing your finest
+            course on the ByteSpace Course Library.
+          </p>
+          <div className="mt-8">
+            <Link
+              href="/creators/1"
+              className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#D4FB20] text-[#161718] font-satoshi font-medium text-[18px] leading-[120%] hover:brightness-95 transition-all shadow-md"
+            >
+              Join as Creator
+            </Link>
           </div>
         </div>
       </section>
 
       {/* 8. DISCOVER WHAT OUR COMMUNITY IS SAYING (Testimonials) */}
-      <section className="py-20 lg:py-28 bg-[#F5F6F7]/60 border-t border-[#ECEFF2]">
-        <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
+      <section className="relative w-full bg-[#FAFAFA] overflow-hidden py-16 lg:py-[100px]">
+        {/* Ambient Gradient Glows from Figma Ellipses */}
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-[#D4FB20]/15 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-10 w-[550px] h-[550px] bg-[#003BE2]/10 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="relative z-10 max-w-[1204px] mx-auto px-4 sm:px-6 xl:px-0">
           {/* Header Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            <div className="lg:col-span-5">
-              <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[44px] text-[#161718] leading-tight">
-                Discover What Our Community is Saying
+          <div className="flex flex-col lg:flex-row justify-between items-start gap-6 lg:gap-[43px]">
+            <div className="w-full lg:w-[577px]">
+              <h2 className="font-poppins font-semibold text-3xl sm:text-4xl lg:text-[44px] leading-[120%] tracking-[-0.01em] text-black">
+                Discover What Our Community Is Saying
               </h2>
             </div>
-            <div className="lg:col-span-7">
-              <p className="text-[#585A62] text-sm sm:text-base leading-relaxed">
+            <div className="w-full lg:w-[580px]">
+              <p className="font-satoshi font-normal text-base sm:text-[18px] leading-[160%] text-[#4F4F4F]">
                 At ByteSpace, our vibrant community of learners and creators is
-                at the heart of all we do. Hear directly from those who have
-                experienced the transformative power of learning and sharing on
+                at the heart of what we do. Hear directly from those who have
+                experienced the transformative journey of learning and creating on
                 our platform. Explore testimonials that reflect the diverse
-                perspectives and enthusiastic reviews of our community.
+                perspectives of enthusiastic learners and accomplished creators.
               </p>
             </div>
           </div>
 
           {/* 3 Testimonials Cards */}
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-12 lg:mt-[72px] grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-[41px]">
             {testimonials.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-[24px] border border-[#ECEFF2] p-8 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow"
+                className="bg-white rounded-[24px] p-6 flex flex-col justify-start gap-6 border border-[#CED0D3]/30 shadow-[0px_4px_24px_rgba(0,0,0,0.04)]"
               >
-                <div>
-                  {/* Star Rating */}
-                  <div className="flex items-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-4 h-4 fill-[#CBFC01] text-[#8CB400]"
-                      />
-                    ))}
-                  </div>
-
-                  {/* Quote */}
-                  <p className="mt-6 text-[#4B4C53] text-sm sm:text-base leading-relaxed italic">
-                    &ldquo;{item.content}&rdquo;
-                  </p>
+                {/* Author Avatar (80x80px) */}
+                <div className="relative w-20 h-20 rounded-full overflow-hidden bg-neutral-100 shrink-0">
+                  <Image
+                    src={item.avatar}
+                    alt={item.name}
+                    width={80}
+                    height={80}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
                 {/* Author Info */}
-                <div className="mt-8 pt-6 border-t border-[#ECEFF2] flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden bg-neutral-100 shrink-0">
-                    <Image
-                      src={item.avatar}
-                      alt={item.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <h4 className="font-poppins font-semibold text-base text-[#161718]">
-                      {item.name}
-                    </h4>
-                    <p className="text-xs text-[#82868E]">{item.role}</p>
-                  </div>
+                <div className="space-y-1">
+                  <h4 className="font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-black">
+                    {item.name}
+                  </h4>
+                  <p className="font-satoshi font-normal text-[18px] leading-[160%] text-[#003BE2]">
+                    {item.role}
+                  </p>
                 </div>
+
+                {/* Quote */}
+                <p className="font-satoshi font-normal text-[18px] leading-[160%] text-[#4F4F4F]">
+                  &ldquo;{item.content}&rdquo;
+                </p>
               </div>
             ))}
           </div>

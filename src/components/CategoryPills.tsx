@@ -1,7 +1,9 @@
 "use client";
 
+import { categoryRows } from "@/data/courses";
+
 interface CategoryPillsProps {
-  categories: string[];
+  categories?: string[];
   selectedCategory: string;
   onSelectCategory: (category: string) => void;
   className?: string;
@@ -14,25 +16,41 @@ export default function CategoryPills({
   className = "",
 }: CategoryPillsProps) {
   return (
-    <div
-      className={`flex items-center gap-2.5 overflow-x-auto no-scrollbar py-2 ${className}`}
-    >
-      {categories.map((category) => {
-        const isSelected = selectedCategory === category;
-        return (
-          <button
-            key={category}
-            onClick={() => onSelectCategory(category)}
-            className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap transition-all duration-200 cursor-pointer ${
-              isSelected
-                ? "bg-[#CBFC01] text-[#161718] font-semibold shadow-sm"
-                : "bg-white border border-[#DAE0E5] text-[#585A62] hover:border-[#003BE2] hover:text-[#003BE2]"
-            }`}
-          >
-            {category}
-          </button>
-        );
-      })}
+    <div className={`flex flex-col items-center gap-4 w-full max-w-[1086px] mx-auto ${className}`}>
+      {categoryRows.map((row, rowIndex) => (
+        <div
+          key={rowIndex}
+          className="flex flex-wrap items-center justify-center gap-4"
+        >
+          {row.map((category) => {
+            const isSelected = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                onClick={() => onSelectCategory(category)}
+                className={`h-[43px] px-4 py-3 rounded-full font-satoshi font-medium text-[16px] leading-[120%] tracking-[0%] whitespace-nowrap transition-colors duration-200 cursor-pointer flex items-center justify-center ${
+                  isSelected
+                    ? "bg-[#D4FB20] text-[#242528]"
+                    : "bg-[#F5F5F6] text-[#242528] hover:bg-[#EAEBEF]"
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+
+          {/* "+ More" button on the 3rd row */}
+          {rowIndex === categoryRows.length - 1 && (
+            <button
+              onClick={() => onSelectCategory("UI/UX Design")}
+              className="h-[43px] px-4 py-3 font-satoshi font-medium text-[16px] leading-[120%] text-[#003BE2] hover:underline transition-all cursor-pointer flex items-center justify-center whitespace-nowrap"
+            >
+              + More
+            </button>
+          )}
+        </div>
+      ))}
     </div>
   );
 }
+

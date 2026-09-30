@@ -57,27 +57,27 @@ export const coursesData: Course[] = [
     commentsCount: 59,
     level: "Beginner",
     category: "UI/UX Design",
-    thumbnail: "https://images.unsplash.com/photo-1581291518857-4e27b48ff24e?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-0.png",
     featured: true,
   },
   {
     id: "2",
-    title: "Build Digital Asset: A Comprehensive Guide",
+    title: "Build Digital Asset",
     subtitle: "Unlock the Power of Digital Creation with Expert Guidance",
     instructor: "purepearl studio",
     instructorRole: "Professional Creator",
     instructorAvatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80",
     instructorBio: "Welcome to the creative world of PurePearl Studio. Here, you'll discover the passion, expertise, and inspiration that drive my creative journey. Let's explore and learn together! Dive into my creative portfolio, showcasing a glimpse of my artistic endeavors. From digital designs to multimedia projects, each piece tells a unique story.",
-    rating: 4.8,
+    rating: 4.5,
     reviewCount: 172,
     studentCount: 199,
     price: 25,
-    lessonsCount: 112,
-    duration: "24 hours",
-    commentsCount: 64,
-    level: "Intermediate",
+    lessonsCount: 17,
+    duration: "2 hours 16 mins",
+    commentsCount: 59,
+    level: "Beginner",
     category: "UI/UX Design",
-    thumbnail: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-1.png",
     featured: true,
     description: [
       "Embark on an enlightening exploration into the world of digital creation with our comprehensive course, 'Build Digital Assets: A Comprehensive Guide.' This transformative learning experience invites you to delve deep into the intricacies of crafting impactful digital content. From laying the groundwork with foundational concepts to mastering advanced techniques, this guide is meticulously curated to empower you with the skills essential for navigating the dynamic landscape of digital asset creation.",
@@ -193,7 +193,7 @@ export const coursesData: Course[] = [
     commentsCount: 59,
     level: "Beginner",
     category: "Data Science",
-    thumbnail: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-2.png",
     featured: true,
   },
   {
@@ -212,7 +212,7 @@ export const coursesData: Course[] = [
     commentsCount: 59,
     level: "Beginner",
     category: "Productivity",
-    thumbnail: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-3.png",
     featured: true,
   },
   {
@@ -231,7 +231,7 @@ export const coursesData: Course[] = [
     commentsCount: 59,
     level: "Beginner",
     category: "Business",
-    thumbnail: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-4.png",
     featured: true,
   },
   {
@@ -250,7 +250,7 @@ export const coursesData: Course[] = [
     commentsCount: 59,
     level: "Beginner",
     category: "Business",
-    thumbnail: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80",
+    thumbnail: "/assets/courses/course-5.png",
     featured: true,
   },
   {
@@ -363,6 +363,33 @@ export const coursesData: Course[] = [
   }
 ];
 
+export const categoryRows = [
+  [
+    "Featured",
+    "Music",
+    "Drawing & Painting",
+    "Marketing",
+    "Animation",
+    "Social Media",
+    "UI/UX Design",
+    "Creative Marketing",
+  ],
+  [
+    "Digital Illustration",
+    "Film & Video",
+    "Crafts",
+    "Freelance & Entrepreneurship",
+    "Graphic Design",
+    "Photography",
+  ],
+  [
+    "Productivity",
+    "Web Development",
+    "Data Science",
+    "Cooking",
+  ],
+];
+
 export const categoriesList = [
   "Featured",
   "Music",
@@ -372,8 +399,15 @@ export const categoriesList = [
   "Social Media",
   "UI/UX Design",
   "Creative Marketing",
+  "Digital Illustration",
+  "Film & Video",
+  "Crafts",
+  "Freelance & Entrepreneurship",
+  "Graphic Design",
+  "Photography",
   "Productivity",
   "Web Development",
   "Data Science",
   "Cooking",
 ];
+

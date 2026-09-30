@@ -1,115 +1,126 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Star, BarChart2 } from "lucide-react";
+import AvatarStack from "@/components/ui/AvatarStack";
 import { Course } from "@/data/courses";
 
 interface CourseCardProps {
   course: Course;
+  className?: string;
+  starColor?: string;
 }
 
-export default function CourseCard({ course }: CourseCardProps) {
+export default function CourseCard({
+  course,
+  className = "",
+  starColor,
+}: CourseCardProps) {
   return (
-    <div className="bg-white rounded-[24px] border border-[#ECEFF2] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+    <div
+      className={`w-full max-w-[373px] bg-white rounded-[24px] border border-[#CED0D3] p-4 flex flex-col justify-between transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group ${className}`}
+    >
       <div>
-        {/* Course Thumbnail with overlaid badges */}
-        <Link href={`/courses/${course.id}`} className="block relative w-full h-[180px] rounded-[18px] overflow-hidden bg-neutral-100">
+        {/* Course Thumbnail with exact Figma chips baked in */}
+        <Link
+          href={`/courses/${course.id}`}
+          className="block relative w-full h-[195px] rounded-[12px] overflow-hidden bg-[#F5F5F6]"
+        >
           <Image
             src={course.thumbnail}
             alt={course.title}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 373px"
           />
-          {/* Bottom badge pills overlay */}
-          <div className="absolute bottom-2.5 left-2 right-2 flex items-center justify-between gap-1 text-[11px] font-medium text-white/95">
-            <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full whitespace-nowrap">
-              {course.lessonsCount} Lessons
-            </span>
-            <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full whitespace-nowrap">
-              {course.duration}
-            </span>
-            <span className="bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full whitespace-nowrap">
-              {course.commentsCount} Comments
-            </span>
-          </div>
         </Link>
 
-        {/* Course Info */}
-        <div className="pt-4 pb-2">
-          {/* Title and Rating */}
+        {/* Course Details */}
+        <div className="mt-4 flex flex-col">
+          {/* Row 1: Title and Star Rating */}
           <div className="flex items-start justify-between gap-2">
             <Link
               href={`/courses/${course.id}`}
-              className="font-poppins font-semibold text-base text-[#161718] leading-snug line-clamp-1 hover:text-[#003BE2] transition-colors"
+              className="font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-black flex-1 min-w-0 truncate hover:text-[#003BE2] transition-colors"
+              title={course.title}
             >
               {course.title}
             </Link>
-            <div className="flex items-center gap-1 text-sm font-semibold text-[#161718] shrink-0">
-              <span>{course.rating.toFixed(1)}</span>
-              <Star className="w-4 h-4 fill-[#CBFC01] text-[#8CB400]" />
+            <div className="flex items-center gap-1 shrink-0 pt-0.5">
+              <span className="font-satoshi text-[18px] leading-[160%] text-[#4F4F4F]">
+                {course.rating.toFixed(1)}
+              </span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill={starColor || "#CED0D3"}
+                xmlns="http://www.w3.org/2000/svg"
+                className="shrink-0"
+              >
+                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+              </svg>
             </div>
           </div>
 
-          {/* Instructor */}
-          <p className="mt-1 text-xs text-[#82868E]">
-            by{" "}
+          {/* Row 2: Author */}
+          <p className="mt-1 font-satoshi text-[12px] leading-[160%]">
+            <span className="text-[#82868E]">by </span>
             <Link
               href="/creators/1"
-              className="text-[#585A62] hover:text-[#003BE2] transition-colors"
+              className="text-[#003BE2] hover:underline transition-colors"
             >
               {course.instructor}
             </Link>
           </p>
 
-          {/* Tags & Avatars */}
+          {/* Row 3: Beginner Badge & Student Avatars Stack */}
           <div className="mt-4 flex items-center justify-between">
-            {/* Level Pill */}
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F5F6F7] text-[#4B4C53] text-xs font-medium">
-              <BarChart2 className="w-3.5 h-3.5 text-[#003BE2]" />
-              {course.level}
+            {/* Beginner Level Pill */}
+            <span className="h-[32px] px-3 py-1.5 rounded-full bg-[#F5F5F6] inline-flex items-center gap-1.5">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 14 14"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.5 2.5V11.5M7 5.5V11.5M3.5 8.5V11.5"
+                  stroke="#4B4C53"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span className="font-satoshi font-medium text-[12px] leading-[120%] text-[#4B4C53]">
+                {course.level}
+              </span>
             </span>
 
-            {/* Student Avatars Pile */}
-            <div className="flex items-center -space-x-2">
-              <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80"
-                  alt="Student avatar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=60&q=80"
-                  alt="Student avatar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="w-6 h-6 rounded-full border-2 border-white overflow-hidden bg-neutral-200 relative">
-                <Image
-                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
-                  alt="Student avatar"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <span className="w-6 h-6 rounded-full border-2 border-white bg-[#161718] text-white text-[9px] font-bold flex items-center justify-center">
-                26+
-              </span>
-            </div>
+            {/* Reusable AvatarStack Component */}
+            <AvatarStack
+              avatars={[
+                "/assets/avatars/avatar-1.jpg",
+                "/assets/avatars/avatar-2.jpg",
+                "/assets/avatars/avatar-3.jpg",
+                "/assets/avatars/avatar-4.jpg",
+              ]}
+              badge="26+"
+              size="sm"
+            />
           </div>
         </div>
       </div>
 
-      {/* Pricing Footer */}
-      <div className="pt-3 mt-1 border-t border-[#ECEFF2] flex items-baseline gap-1">
-        <span className="font-poppins font-bold text-xl text-[#003BE2]">
+      {/* Row 4: Pricing (Directly below without separator line, exactly as Figma) */}
+      <div className="mt-4 flex items-baseline">
+        <span className="font-poppins font-semibold text-[20px] leading-[120%] tracking-[-0.01em] text-[#003BE2]">
           ${course.price}
         </span>
-        <span className="text-xs text-[#82868E]">/lifetime</span>
+        <span className="font-satoshi text-[12px] leading-[160%] text-[#4F4F4F]">
+          /lifetime
+        </span>
       </div>
     </div>
   );
 }
+

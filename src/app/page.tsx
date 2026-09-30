@@ -226,46 +226,36 @@ export default function HomePage() {
       <PartnerLogos />
 
       {/* 3. DISCOVER YOUR PASSION, BUILD YOUR SKILLS */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="pt-16 pb-20 lg:pt-20 lg:pb-24 bg-white">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[120px]">
-          {/* Section Header */}
-          <div className="text-center max-w-3xl mx-auto">
-            <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-[44px] text-[#161718] leading-tight">
-              Discover Your Passion, Build Your Skills
+          {/* Section Header (Frame 3 in Figma) */}
+          <div className="text-center max-w-[917px] mx-auto">
+            <h2 className="font-poppins font-semibold text-3xl sm:text-4xl md:text-[44px] leading-[120%] tracking-[-0.01em] text-[#040819]">
+              Discover Your Passion,
+              <br />
+              Build Your Skills
             </h2>
-            <p className="mt-4 text-[#585A62] text-sm sm:text-base leading-relaxed">
-              At Bytespace, courses you dive to the decaying ecosystem a variety
-              of course across different fields, from technology to arts, to
-              elevate a differences in your professional skills.
+            <p className="mt-4 font-satoshi font-normal text-base sm:text-[18px] leading-[160%] text-[#82868E] max-w-[917px] mx-auto">
+              At Bytespace Courses, we bring you closer to life-changing
+              knowledge. Explore a variety of courses across different fields,
+              from technology to the arts, and make a difference in your career
+              and life.
             </p>
           </div>
 
-          {/* Category Pills Navigation */}
-          <div className="mt-10 flex justify-center">
+          {/* Category Pills Navigation (Tab_Categories in Figma: 3 Rows) */}
+          <div className="mt-10 flex justify-center w-full">
             <CategoryPills
-              categories={categoriesList}
               selectedCategory={selectedCategory}
               onSelectCategory={setSelectedCategory}
-              className="max-w-full justify-start md:justify-center"
             />
           </div>
 
-          {/* 3x2 Course Cards Grid */}
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* 3x2 Course Cards Grid (Frame 8 in Figma: Width 1,199px, Gap 40px) */}
+          <div className="mt-12 max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-items-center">
             {filteredCourses.map((course) => (
               <CourseCard key={course.id} course={course} />
             ))}
-          </div>
-
-          {/* View More Link */}
-          <div className="mt-12 text-center">
-            <Link
-              href="/search"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full bg-[#003BE2] text-white font-poppins font-semibold text-sm hover:bg-[#0445FF] transition-all shadow-md hover:shadow-lg"
-            >
-              Explore All Courses
-              <ArrowRight className="w-4 h-4" />
-            </Link>
           </div>
         </div>
       </section>

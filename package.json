@@ -1,6 +1,7 @@
 {
-  "name": "tmp-app",
-  "version": "0.1.0",
+  "name": "bytespace",
+  "version": "1.0.0",
+  "description": "ByteSpace — Online Course & Learning Platform built with Next.js 16, TypeScript, and Tailwind CSS v4",
   "private": true,
   "scripts": {
     "dev": "next dev",

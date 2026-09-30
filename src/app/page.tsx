@@ -295,10 +295,16 @@ export default function HomePage() {
 
       {/* 5. PROFESSIONAL GROWTH & COURSE MANAGEMENT SHOWCASE (Frame 15 in Figma) */}
       <section className="py-20 lg:py-[120px] bg-[#FAFAFA] relative overflow-hidden">
-        {/* Soft Background Blur Glows */}
-        <div className="absolute top-[10%] -left-[10%] w-[500px] h-[500px] rounded-full bg-[#D4FB20]/10 blur-[120px] pointer-events-none" />
-        <div className="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full bg-[#003BE2]/5 blur-[120px] pointer-events-none" />
-        <div className="absolute bottom-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-[#D4FB20]/10 blur-[120px] pointer-events-none" />
+        {/* Figma 100% Exact Ambient Background Glows (Group 5 & Ellipse 12 in Figma Frame 15) */}
+        <div className="absolute inset-0 w-full h-full pointer-events-none select-none overflow-hidden z-0">
+          <Image
+            src="/assets/growth/growth-bg.webp"
+            alt=""
+            fill
+            className="object-cover object-center pointer-events-none"
+            priority
+          />
+        </div>
 
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-[121px] space-y-20 lg:space-y-[72px] relative z-10">
           {/* Feature 1: Your Path to Professional Growth Starts Here! (Frame 13 in Figma) */}
